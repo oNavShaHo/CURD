@@ -99,8 +99,9 @@ app.delete('/api/items/:id', (req, res) => {
 
     
       // Start the server
-      app.listen(3000, () => {
-        console.log('API listening on port 3000');
-      });
+      app.listen(port,()=>{
+        console.log(`connection is live at port ${port}`);
+    
+    });
   
     module.exports=app;
