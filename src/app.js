@@ -30,6 +30,16 @@ app.post('/api/items', (req, res) => {
   });
 });
 
+app.post('/verify-otp', (req, res) => {
+  const enteredOTP = req.body.otpCode;
+  const expectedOTP = req.body.otp;  // the OTP that was generated and sent to the user
+
+  if (enteredOTP === expectedOTP) {
+    res.send({ success: true });
+  } else {
+    res.send({ success: false });
+  }
+});
 
   
  // Read all resources
